@@ -1,0 +1,20 @@
+<div class="newcontainer">
+    <div class="backtologinmain" >
+        <p>Back to login page!</p>
+        <a class="backtologin" routerLink="/">Click here!</a>
+    </div>
+    <div class="subcont" [formGroup]="form">
+        <form method="post" action="javascript:void(0)" (submit)="send()">
+            <div class="inptdiv">
+                <input type="text" id="name" formControlName="user_name" placeholder="Your name">
+                <input type="text" id="email" formControlName="from_email" placeholder="Enter your email">
+                <input type="text" id="subject" formControlName="subject" placeholder="Subject">
+                <textarea name="message" id="message" placeholder="message" formControlName="message" cols="20"
+                    rows="10"></textarea>
+            </div>
+            <div class="btndiv">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>

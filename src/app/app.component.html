@@ -1,0 +1,46 @@
+
+<div class=" maincontainer">
+  <div class="maincontent">
+    <h2>{{title}}</h2>
+    <form [formGroup]="register" class="maindiv" (ngSubmit)="getData()">
+      <div class="subcont">
+        <input type="text" class="form-control enterval" placeholder="User Name" formControlName="name">
+        <fa-icon class="icons" [icon]="fauser" *ngIf="vname && vname.invalid && vname.touched"></fa-icon>
+        <span *ngIf="vname && vname.invalid && vname.touched">You'r username must have a six charcter</span>
+      </div>
+      <div class="subcont">
+        <input type="email" class="enterval form-control" placeholder="Email" formControlName="email">
+        <fa-icon class="icons" [icon]="faenvelope" *ngIf="vemail && vemail.invalid && vemail.touched"></fa-icon>
+        <span *ngIf="vemail && vemail.invalid && vemail.touched">Enter a valid mail ID</span>
+      </div>
+      <div class="subcont">
+        <input type="password" class="enterval form-control" placeholder="Password" formControlName="password">
+        <fa-icon class="Passicon" [icon]="falock" *ngIf="vpwd && vpwd.invalid && vpwd.touched"></fa-icon>
+        <span *ngIf="vpwd && vpwd.invalid && vpwd.touched">You'r password must have a six charcter<br> andmust follow
+          the regular<br> password pattern</span>
+      </div>
+      <div>
+        <div class="subcont">
+          <button [disabled]="register.invalid" class="btn btn-primary" type="submit">Login</button>
+        </div>
+      </div>
+    </form>
+    <div class="otherLogin">
+      <div class="otherLoginSub1">
+        <p>Login via Google or Github</p>
+        <div class="loginIcons">
+          <fa-icon class="bicons" [icon]="google"></fa-icon>
+          <fa-icon class="bicons iconleft" [icon]="git"></fa-icon>
+        </div>
+      </div>
+      <!-- routes added -->
+    </div>
+  </div>
+</div>
+<div class="loginissue">
+  <div class="loginissue_sub">
+    <p>Having issue in login click here!</p>
+    <a [routerLink]="['/help']"> Help</a>
+  </div>
+</div>
+<router-outlet></router-outlet>
